@@ -1,0 +1,6 @@
+/* 强制图片在缩放时保持清晰 */
+.markdown-preview-view img,
+.markdown-rendered img {
+    image-rendering: -webkit-optimize-contrast; /* 适用于 macOS/Safari 内核 */
+    image-rendering: crisp-edges;
+}

@@ -1,0 +1,11 @@
+{
+  "promptDelete": false,
+  "attachmentFolderPath": "assets/",
+  "newFileLocation": "current",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "showInlineTitle": true,
+  "readableLineLength": false,
+  "livePreview": true,
+  "autoConvertHtml": false
+}

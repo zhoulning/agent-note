@@ -1,0 +1,16 @@
+# Normalize all text files to LF in the repo
+* text=auto eol=lf
+
+# .gitattributes — 插件配置各设备独立，同步时保留本地设置
+# our = 优先保留本地（不合并），避免桌面端覆盖手机端
+# 注意：首次 push 时各设备需要各自设置好本地插件状态
+
+# 插件列表配置（各设备独立管理）
+.obsidian/community-plugins.json merge=ours
+.obsidian/core-plugins.json merge=ours
+.obsidian/plugins/ merge=ours
+
+# 热键和界面配置（可选同步，但可能导致布局混乱，建议也保护）
+.obsidian/hotkeys.json merge=ours
+.obsidian/workspace.json merge=ours
+.obsidian/graph.json merge=ours

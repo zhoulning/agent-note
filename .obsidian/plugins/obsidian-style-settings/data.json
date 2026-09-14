@@ -1,0 +1,9 @@
+{
+  "phycat-colors@@light-color-scheme": "theme-light-sky",
+  "phycat-colors@@dark-color-scheme": "theme-dark-vampire",
+  "phycat-layout@@layout-style": "layout-cards",
+  "phycat-layout@@rainbow-folders": true,
+  "phycat-headings@@h1-dark-color": "#FFFFFF",
+  "phycat-spacing@@letter-spacing": 1,
+  "phycat-spacing@@p-spacing": "0em"
+}

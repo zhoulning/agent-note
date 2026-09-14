@@ -1,0 +1,11 @@
+{
+  "id": "zln-markdown-fix",
+  "name": "ZLN Markdown Fix",
+  "version": "1.5.17",
+  "minAppVersion": "0.15.0",
+  "description": "Automatically fix Markdown bold syntax boundary issues by moving ** markers",
+  "author": "ZLN",
+  "authorUrl": "",
+  "fundingUrl": "",
+  "isDesktopOnly": false
+}

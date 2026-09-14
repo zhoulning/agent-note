@@ -1,0 +1,22 @@
+# .obsidian/ directory
+.obsidian/workspace.json
+.obsidian/appearance.json
+.obsidian/plugins/claudian/data.json
+.obsidian/plugins/cluadian/data.json
+
+# Pi Agent (per-device plugin config, model selection, and sessions)
+.obsidian/plugins/pi-agent/
+
+# Claude Code runtime data
+.claudian
+.claude/
+
+# System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+~$*
