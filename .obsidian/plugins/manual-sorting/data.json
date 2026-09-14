@@ -2,7 +2,30 @@
   "customOrder": {
     "/": {
       "children": [
+        "Task 0 基础与环境 - 笔记.md",
+        "Task 0 基础与环境 - 作业.md",
+        "assert",
         "README.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "assert": {
+      "children": [
+        "assert/Task 0 基础与环境 - 笔记",
+        "assert/README"
+      ],
+      "sortOrder": "custom"
+    },
+    "assert/README": {
+      "children": [
+        "assert/README/file-20260914184324297.jpg"
+      ],
+      "sortOrder": "custom"
+    },
+    "assert/Task 0 基础与环境 - 笔记": {
+      "children": [
+        "assert/Task 0 基础与环境 - 笔记/file-20260914184542095.png",
+        "assert/Task 0 基础与环境 - 笔记/file-20260914185457796.png"
       ],
       "sortOrder": "custom"
     }

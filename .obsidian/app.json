@@ -6,6 +6,5 @@
   "useMarkdownLinks": true,
   "showInlineTitle": true,
   "readableLineLength": false,
-  "livePreview": true,
-  "autoConvertHtml": false
+  "livePreview": true
 }
