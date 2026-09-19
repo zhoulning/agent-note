@@ -1,0 +1,84 @@
+
+🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖
+  SYSTEM-HINT ENHANCED AGENT
+🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖🤖
+
+================================================================================
+  离线预览：Agent 状态栏（System Hint）如何改变上下文
+================================================================================
+说明：以下每个案例对比【无状态栏】（模型只能看到原始轨迹）与
+      【有状态栏】（框架把隐式状态提炼成显式知识注入上下文末尾）。
+      场景取自书中的 Xfinity 退款案例，全部在本地渲染，不调用任何 API。
+
+【案例 1 · 时间戳跟踪】为用户消息与工具结果加上时间前缀
+------------------------------------------------------------
+  无状态栏：Can you call them again to follow up?
+  有状态栏：[2025-09-14 10:30:45] Can you call them again to follow up?
+  → Agent 能理解“昨天的文件”与“今天的修改”之间的时序关系。
+
+【案例 2 · 工具调用计数器】在工具结果上标注第几次调用
+------------------------------------------------------------
+  无状态栏：{"success": true, "output": "Call connected, no answer"}
+  有状态栏：[2025-09-14 10:30:45] [Tool call #3 for 'phone_call']
+            {"success": true, "output": "Call connected, no answer"}
+  → 显式计数触发模型的模式识别：到达 3/3 上限时主动停止，不再重复拨打。
+
+【案例 3 · TODO 列表管理】把多步任务分解并持续复述
+------------------------------------------------------------
+  无状态栏：（模型需自行从长轨迹中回忆还剩哪些子任务，易遗漏）
+  有状态栏：
+    TODO List:
+      [1] ✅ 拨打 Xfinity 客服核实退款政策 (completed)
+      [2] 🔄 提交退款申请 (in_progress)
+      [3] ⏳ 确认退款到账 (pending)
+  → TODO 列表充当外部记忆，确保行动与总体规划保持一致。
+
+【案例 4 · 详细错误信息】把裸异常升级为带修复建议的诊断
+------------------------------------------------------------
+  无状态栏：File not found: /home/user/refund_policy.txt
+  有状态栏：
+    Tool 'read_file' failed with FileNotFoundError: File not found: /home/user/refund_policy.txt
+    Arguments: {
+      "file_path": "refund_policy.txt"
+    }
+    Suggestions: Verify the file/directory path exists | Check the current working directory | Use absolute paths or create the file/directory first
+2026-09-19 18:24:50,568 - INFO - System-Hint Agent initialized with provider: kimi, model: kimi-k3
+  → Agent 从盲目重试转向分析性的问题解决（验证路径、检查目录、用绝对路径）。
+
+【案例 5 · 系统状态感知】注入当前时间、目录、操作系统、Shell、Python 版本
+------------------------------------------------------------
+  无状态栏：（模型不知道自己身处哪个目录、哪种操作系统）
+  有状态栏：
+    Current Time: 2025-09-14 10:30:45
+    Current Directory: C:\ai_coding\ai-agent-book\chapter2\system-hint
+    System: Windows (10)
+    Shell Environment: Windows Command Prompt or PowerShell
+    Python Version: 3.11.2
+  → 操作系统信息让 Agent 做出平台相关决策（Linux 用 apt、macOS 用 brew）。
+
+================================================================================
+  实际追加到上下文末尾的状态栏（一条 role=user 的消息）
+================================================================================
+=== SYSTEM STATE ===
+Current Time: 2025-09-14 10:30:45
+Current Directory: C:\ai_coding\ai-agent-book\chapter2\system-hint
+System: Windows (10)
+Shell Environment: Windows Command Prompt or PowerShell
+Python Version: 3.11.2
+
+=== CURRENT TASKS ===
+TODO List:
+  [1] ✅ 拨打 Xfinity 客服核实退款政策 (completed)
+  [2] 🔄 提交退款申请 (in_progress)
+  [3] ⏳ 确认退款到账 (pending)
+
+
+注意：这条消息的 role 是 user，但内容由 Agent 框架自动生成，追加在上下文最末尾——
+紧邻模型即将生成的新 token，因此获得最高注意力权重；且因为是“追加”而非
+“修改”，前面已缓存的 KV Cache 前缀不受影响。
+
+本次预览启用的技术：时间戳跟踪、工具调用计数器、TODO 列表管理、详细错误信息、系统状态感知
+提示：用 --no-timestamps / --no-counter / --no-todo / --no-errors / --no-state
+      可分别关闭某一类，观察上下文的差异。
+
+👋 Thank you for using System-Hint Enhanced Agent!

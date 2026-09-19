@@ -3,6 +3,7 @@
     "/": {
       "children": [
         "Task0",
+        "Task1",
         "assert",
         "README.md"
       ],
@@ -141,6 +142,63 @@
     "Task0/assert/Task 0 基础与环境 - 作业": {
       "children": [
         "Task0/assert/Task 0 基础与环境 - 作业/file-20260916180509710.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task1": {
+      "children": [
+        "Task1/assert",
+        "Task1/Task 1 上下文与记忆 - 笔记.md",
+        "Task1/Task 1 上下文与记忆 - 作业.md",
+        "Task1/实验3-5执行结果",
+        "Task1/实验2-9执行结果"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task1/实验2-9执行结果": {
+      "children": [
+        "Task1/实验2-9执行结果/system-hint-preview"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task1/实验2-9执行结果/system-hint-preview": {
+      "children": [
+        "Task1/实验2-9执行结果/system-hint-preview/preview_output.txt"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task1/实验3-5执行结果": {
+      "children": [
+        "Task1/实验3-5执行结果/bm25-cli"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task1/实验3-5执行结果/bm25-cli": {
+      "children": [
+        "Task1/实验3-5执行结果/bm25-cli/eval_k1_2_b_03.json",
+        "Task1/实验3-5执行结果/bm25-cli/eval_k1_2_b_03.txt",
+        "Task1/实验3-5执行结果/bm25-cli/query_cat_synonym_fail.json",
+        "Task1/实验3-5执行结果/bm25-cli/query_cat_synonym_fail.txt",
+        "Task1/实验3-5执行结果/bm25-cli/query_distillation_k1_1_b_0.json",
+        "Task1/实验3-5执行结果/bm25-cli/query_distillation_k1_1_b_0.txt",
+        "Task1/实验3-5执行结果/bm25-cli/query_distillation_k1_2_b_05.json",
+        "Task1/实验3-5执行结果/bm25-cli/query_distillation_k1_2_b_05.txt",
+        "Task1/实验3-5执行结果/bm25-cli/query_distillation_default.json",
+        "Task1/实验3-5执行结果/bm25-cli/query_distillation_default.txt",
+        "Task1/实验3-5执行结果/bm25-cli/eval_default.json",
+        "Task1/实验3-5执行结果/bm25-cli/eval_default.txt"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task1/assert": {
+      "children": [
+        "Task1/assert/Task 1 上下文与记忆 - 笔记"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task1/assert/Task 1 上下文与记忆 - 笔记": {
+      "children": [
+        "Task1/assert/Task 1 上下文与记忆 - 笔记/file-20260919182052383.png"
       ],
       "sortOrder": "custom"
     }

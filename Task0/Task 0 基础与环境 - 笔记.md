@@ -16,7 +16,7 @@ Agent = LLM（大语言模型，Large Language Model）+ 上下文 + 工具
 
 工具设计的核心原则是：**通用基础能力用于组合与探索；专用工具用于约束高风险和强业务规则操作**。
 
-### 什么是Function Calling
+### 什么是Function Calling？
 ![](assert/Task%200%20基础与环境%20-%20笔记/file-20260914190132569.png)
 工具调用（Tool Calling，也称 Function Calling）是现代 LLM Agent 的一项核心能力，它让模型能够通过结构化的方式调用外部工具。这种能力将 LLM 从一个纯粹的文本生成器转变为能够执行实际操作的智能系统。本书后续统一使用“工具调用”这一术语。
 
@@ -151,7 +151,7 @@ print(run("帮我看看 config.txt，顺便查下上海天气。"))
 ```
 ·
 
-### 什么是harness
+### 什么是Harness?
 ![](assert/Task%200%20基础与环境%20-%20笔记/file-20260915224450755.png)
 
 从 Harness 工程的视角看，可以把 LLM 抽象为核心组件 Model，把 Agent 边界内负责支撑模型运行及模型与环境交互的代码、配置和服务统称为 Harness。

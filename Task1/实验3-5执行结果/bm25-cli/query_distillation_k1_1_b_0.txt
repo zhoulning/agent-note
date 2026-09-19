@@ -1,0 +1,13 @@
+已加载语料：10 篇文档（内置示例）
+BM25 参数：k1=1.0, b=0.0, avgdl=11.40
+
+查询: 'model distillation'  (BM25, top-5)
+------------------------------------------------------------
+  #1  doc_3  score=3.0594  Model Distillation
+       命中词: ['model', 'distillation']
+       预览: Model distillation compresses a large teacher model into a smaller student model...
+  #2  doc_4  score=2.4476  Knowledge Distillation
+       命中词: ['model', 'distillation']
+       预览: Knowledge distillation transfers knowledge from a big neural network to a compac...
+
+已写入结果：E:\Obsidian知识库\agent-note\Task1\实验3-5执行结果\bm25-cli\query_distillation_k1_1_b_0.json
