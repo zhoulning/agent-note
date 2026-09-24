@@ -1,0 +1,66 @@
+调用工具 arxiv_search ...
+{
+  "success": true,
+  "message": {
+    "query": "large language model agents",
+    "papers": [
+      {
+        "title": "Learning From Failure: Integrating Negative Examples when Fine-tuning Large Language Models as Agents",
+        "authors": [
+          "Renxi Wang",
+          "Haonan Li",
+          "Xudong Han",
+          "Yixuan Zhang",
+          "Timothy Baldwin"
+        ],
+        "summary": "Large language models (LLMs) have achieved success in acting as agents, which interact with environments through tools such as search engines. However, LLMs are optimized for language generation instead of tool use during training or alignment, limiting their effectiveness as agents. To resolve this problem, previous work has first collected interaction trajectories between LLMs and environments, using only trajectories that successfully finished the task to fine-tune smaller models, making fine...",
+        "published": "2024-02-18T17:10:07+00:00",
+        "url": "http://arxiv.org/abs/2402.11651v2",
+        "pdf_url": "https://arxiv.org/pdf/2402.11651v2",
+        "categories": [
+          "cs.CL"
+        ]
+      },
+      {
+        "title": "Large Language Model Evaluation Via Multi AI Agents: Preliminary results",
+        "authors": [
+          "Zeeshan Rasheed",
+          "Muhammad Waseem",
+          "Kari Systä",
+          "Pekka Abrahamsson"
+        ],
+        "summary": "As Large Language Models (LLMs) have become integral to both research and daily operations, rigorous evaluation is crucial. This assessment is important not only for individual tasks but also for understanding their societal impact and potential risks. Despite extensive efforts to examine LLMs from various perspectives, there is a noticeable lack of multi-agent AI models specifically designed to evaluate the performance of different LLMs. To address this gap, we introduce a novel multi-agent AI ...",
+        "published": "2024-04-01T10:06:04+00:00",
+        "url": "http://arxiv.org/abs/2404.01023v1",
+        "pdf_url": "https://arxiv.org/pdf/2404.01023v1",
+        "categories": [
+          "cs.SE"
+        ]
+      },
+      {
+        "title": "Cognitive Architectures for Language Agents",
+        "authors": [
+          "Theodore R. Sumers",
+          "Shunyu Yao",
+          "Karthik Narasimhan",
+          "Thomas L. Griffiths"
+        ],
+        "summary": "Recent efforts have augmented large language models (LLMs) with external resources (e.g., the Internet) or internal control flows (e.g., prompt chaining) for tasks requiring grounding or reasoning, leading to a new class of language agents. While these agents have achieved substantial empirical success, we lack a systematic framework to organize existing agents and plan future developments. In this paper, we draw on the rich history of cognitive science and symbolic artificial intelligence to pr...",
+        "published": "2023-09-05T17:56:20+00:00",
+        "url": "http://arxiv.org/abs/2309.02427v3",
+        "pdf_url": "https://arxiv.org/pdf/2309.02427v3",
+        "categories": [
+          "cs.AI",
+          "cs.CL",
+          "cs.LG",
+          "cs.SC"
+        ]
+      }
+    ],
+    "count": 3
+  },
+  "metadata": {
+    "query": "large language model agents",
+    "max_results": 3
+  }
+}

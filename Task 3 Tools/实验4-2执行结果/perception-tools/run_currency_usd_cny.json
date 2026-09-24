@@ -1,0 +1,15 @@
+调用工具 currency_converter ...
+{
+  "success": true,
+  "message": {
+    "amount": 100.0,
+    "from_currency": "USD",
+    "to_currency": "CNY",
+    "exchange_rate": 6.71,
+    "converted_amount": 671.0,
+    "timestamp": "2026-09-22"
+  },
+  "metadata": {
+    "rate": 6.71
+  }
+}

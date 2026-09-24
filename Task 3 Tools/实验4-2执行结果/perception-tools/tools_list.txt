@@ -1,0 +1,75 @@
+
+感知工具 MCP 服务器 —— 工具清单（共 54 个）
+========================================================================
+
+【搜索】(4 个)
+------------------------------------------------------------------------
+  web_search                 使用 DuckDuckGo 进行网络搜索（免费，无需 API Key）  [联网]
+  knowledge_base_search      在本地知识库目录中做全文检索
+  download                   从 URL 下载文件到本地（含大小/覆盖保护）  [联网]
+  google_search_enhanced     Google Custom Search，失败时回退 DuckDuckGo  [联网；Google API 需 GOOGLE_API_KEY，未配置则自动回退]
+
+【多模态理解】(19 个)
+------------------------------------------------------------------------
+  webpage_reader             抓取并提取网页正文/链接  [联网]
+  webpage_read_enhanced      增强版网页正文提取  [联网]
+  document_reader            读取 PDF/DOCX/PPTX 文档内容
+  pdf_extract                提取 PDF 文本（支持页码范围）
+  docx_extract               提取 Word（DOCX）文档内容
+  pptx_extract               提取 PowerPoint（PPTX）内容
+  csv_parse                  解析 CSV 表格数据
+  image_parser               解析图片（可选 LLM 视觉分析）  [use_llm 需视觉模型 API]
+  image_ocr                  对图片做 OCR 文字识别  [需安装 tesseract]
+  image_analyze              用视觉模型分析图片内容  [需视觉模型 API]
+  image_metadata             读取图片 EXIF 等元数据
+  video_parser               提取视频元数据/采样帧
+  video_keyframes            从视频抽取关键帧
+  video_analyze              用视觉模型分析视频内容  [需视觉模型 API]
+  audio_transcribe           用 Whisper 将音频转写为文本  [需安装 whisper]
+  audio_metadata             读取音频文件元数据
+  audio_trim                 裁剪音频到指定时间区间
+  youtube_transcript         提取 YouTube 视频字幕  [联网]
+  youtube_download           下载 YouTube 视频  [联网]
+
+【文件系统】(3 个)
+------------------------------------------------------------------------
+  file_reader                读取文件内容（支持编码与截断）
+  grep                       在目录中按正则搜索文件内容
+  text_summarizer            对长文本做摘要（抽取式/截断，占位实现）
+
+【公开数据源】(26 个)
+------------------------------------------------------------------------
+  weather                    查询天气（Open-Meteo，免费无 Key）  [联网]
+  stock_price                查询股票行情  [联网]
+  crypto_price               查询加密货币价格（CoinGecko，免费无 Key）  [联网]
+  currency_converter         货币汇率换算（免费无 Key）  [联网]
+  wikipedia_search           搜索 Wikipedia 并返回摘要  [联网]
+  arxiv_search               搜索 ArXiv 学术论文  [联网]
+  wayback_search             在 Wayback Machine 查历史快照  [联网]
+  xquik_search_posts         通过 Xquik 搜索 X 帖子并返回游标  [联网；需 XQUIK_API_KEY 与有效订阅；按返回帖子计费]
+  location_search            地名/地点地理编码（Nominatim，免费无 Key）  [联网]
+  poi_search                 查询坐标附近的兴趣点（Overpass，免费无 Key）  [联网]
+  yfinance_quote             Yahoo Finance 实时报价  [联网]
+  yfinance_historical        Yahoo Finance 历史行情  [联网]
+  yfinance_company_info      Yahoo Finance 公司资料  [联网]
+  yfinance_financials        Yahoo Finance 财务报表  [联网]
+  pubchem_search             在 PubChem 搜索化合物  [联网]
+  pubchem_properties         获取 PubChem 化合物属性  [联网]
+  pubchem_synonyms           获取 PubChem 化合物别名  [联网]
+  pubchem_similar            搜索结构相似的化合物  [联网]
+  wiki_article_full          获取 Wikipedia 条目全文  [联网]
+  wiki_article_categories    获取 Wikipedia 条目分类  [联网]
+  wiki_article_links         获取 Wikipedia 条目中的链接  [联网]
+  wiki_article_history       获取 Wikipedia 条目历史版本  [联网]
+  arxiv_paper_details        获取 ArXiv 论文详情  [联网]
+  arxiv_download             下载 ArXiv 论文 PDF  [联网]
+  arxiv_categories           列出 ArXiv 学科分类  [联网]
+  wayback_archived_content   获取 Wayback 存档页面内容  [联网]
+
+【私有数据源】(2 个)
+------------------------------------------------------------------------
+  calendar_events            读取 Google 日历事件  [联网；需 Google OAuth 授权]
+  notion_search              搜索 Notion 工作区  [联网；需 NOTION_API_KEY]
+
+提示：`python cli.py info <tool>` 查看参数；`python cli.py run <tool> k=v` 调用。
+

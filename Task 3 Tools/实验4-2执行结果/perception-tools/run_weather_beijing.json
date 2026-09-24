@@ -1,0 +1,26 @@
+调用工具 weather ...
+{
+  "success": true,
+  "message": {
+    "location": "Beijing",
+    "country": "China",
+    "latitude": 39.9075,
+    "longitude": 116.39723,
+    "temperature": 26.0,
+    "feels_like": 26.4,
+    "humidity": 53,
+    "precipitation": 0.0,
+    "weather_code": 0,
+    "description": "Clear sky",
+    "wind_speed": 10.2,
+    "wind_direction": 201,
+    "units": "metric",
+    "timestamp": "2026-09-22T21:00",
+    "provider": "Open-Meteo"
+  },
+  "metadata": {
+    "location": "Beijing",
+    "provider": "Open-Meteo",
+    "api_key_required": false
+  }
+}

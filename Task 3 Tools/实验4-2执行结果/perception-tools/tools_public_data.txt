@@ -1,0 +1,3 @@
+usage: cli.py list [-h]
+                   [--category {search,multimodal,filesystem,public,private}]
+cli.py list: error: argument --category: invalid choice: 'public_data' (choose from 'search', 'multimodal', 'filesystem', 'public', 'private')

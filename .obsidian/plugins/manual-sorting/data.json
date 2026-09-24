@@ -3,7 +3,9 @@
     "/": {
       "children": [
         "Task0",
-        "Task1",
+        "Task 1 上下文工程",
+        "Task 2 用户记忆和知识库",
+        "Task 3 Tools",
         "assert",
         "README.md"
       ],
@@ -18,6 +20,137 @@
     "assert/README": {
       "children": [
         "assert/README/file-20260914184324297.jpg"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 1 上下文工程": {
+      "children": [
+        "Task 1 上下文工程/Task 1 上下文工程 - 笔记.md",
+        "Task 1 上下文工程/Task 1 上下文工程 - 作业.md",
+        "Task 1 上下文工程/实验2-9执行结果",
+        "Task 1 上下文工程/assert"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 1 上下文工程/实验2-9执行结果": {
+      "children": [
+        "Task 1 上下文工程/实验2-9执行结果/system-hint-preview"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 1 上下文工程/实验2-9执行结果/system-hint-preview": {
+      "children": [
+        "Task 1 上下文工程/实验2-9执行结果/system-hint-preview/preview_output.txt"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 1 上下文工程/assert": {
+      "children": [
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记": {
+      "children": [
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919204305496.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919203333853.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919202731616.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919201557703.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919201147863.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919200841026.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919200541565.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919191645253.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919184529425.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919183838610.png",
+        "Task 1 上下文工程/assert/Task 1 上下文工程 - 笔记/file-20260919182052383.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 2 用户记忆和知识库": {
+      "children": [
+        "Task 2 用户记忆和知识库/Task 2 用户记忆和知识库 - 作业.md",
+        "Task 2 用户记忆和知识库/Task 2 用户记忆和知识库 - 笔记.md",
+        "Task 2 用户记忆和知识库/assert",
+        "Task 2 用户记忆和知识库/实验3-5执行结果"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 2 用户记忆和知识库/实验3-5执行结果": {
+      "children": [
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli": {
+      "children": [
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/eval_k1_2_b_03.json",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/eval_k1_2_b_03.txt",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/query_cat_synonym_fail.json",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/query_cat_synonym_fail.txt",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/query_distillation_k1_1_b_0.json",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/query_distillation_k1_1_b_0.txt",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/query_distillation_k1_2_b_05.json",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/query_distillation_k1_2_b_05.txt",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/query_distillation_default.json",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/query_distillation_default.txt",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/eval_default.json",
+        "Task 2 用户记忆和知识库/实验3-5执行结果/bm25-cli/eval_default.txt"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 2 用户记忆和知识库/assert": {
+      "children": [
+        "Task 2 用户记忆和知识库/assert/Task 2 用户记忆和知识库 - 笔记"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 2 用户记忆和知识库/assert/Task 2 用户记忆和知识库 - 笔记": {
+      "children": [
+        "Task 2 用户记忆和知识库/assert/Task 2 用户记忆和知识库 - 笔记/file-20260919211543626.png",
+        "Task 2 用户记忆和知识库/assert/Task 2 用户记忆和知识库 - 笔记/file-20260919210836310.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 3 Tools": {
+      "children": [
+        "Task 3 Tools/Task 3 Tools - 作业.md",
+        "Task 3 Tools/Task 3 Tools - 笔记.md",
+        "Task 3 Tools/assert",
+        "Task 3 Tools/实验4-2执行结果"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 3 Tools/实验4-2执行结果": {
+      "children": [
+        "Task 3 Tools/实验4-2执行结果/perception-tools"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 3 Tools/实验4-2执行结果/perception-tools": {
+      "children": [
+        "Task 3 Tools/实验4-2执行结果/perception-tools/run_arxiv_agents.txt",
+        "Task 3 Tools/实验4-2执行结果/perception-tools/run_arxiv_agents.json",
+        "Task 3 Tools/实验4-2执行结果/perception-tools/tools_public_data.txt",
+        "Task 3 Tools/实验4-2执行结果/perception-tools/run_wikipedia_ai.json",
+        "Task 3 Tools/实验4-2执行结果/perception-tools/run_currency_usd_cny.json",
+        "Task 3 Tools/实验4-2执行结果/perception-tools/run_weather_beijing.json",
+        "Task 3 Tools/实验4-2执行结果/perception-tools/info_weather.txt",
+        "Task 3 Tools/实验4-2执行结果/perception-tools/demo_offline.txt",
+        "Task 3 Tools/实验4-2执行结果/perception-tools/tools_list.txt"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 3 Tools/assert": {
+      "children": [
+        "Task 3 Tools/assert/Task 3 Tools - 笔记"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task 3 Tools/assert/Task 3 Tools - 笔记": {
+      "children": [
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20260922220231178.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20260922203658609.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20260922203019029.png"
       ],
       "sortOrder": "custom"
     },
@@ -142,63 +275,6 @@
     "Task0/assert/Task 0 基础与环境 - 作业": {
       "children": [
         "Task0/assert/Task 0 基础与环境 - 作业/file-20260916180509710.png"
-      ],
-      "sortOrder": "custom"
-    },
-    "Task1": {
-      "children": [
-        "Task1/assert",
-        "Task1/Task 1 上下文与记忆 - 笔记.md",
-        "Task1/Task 1 上下文与记忆 - 作业.md",
-        "Task1/实验3-5执行结果",
-        "Task1/实验2-9执行结果"
-      ],
-      "sortOrder": "custom"
-    },
-    "Task1/实验2-9执行结果": {
-      "children": [
-        "Task1/实验2-9执行结果/system-hint-preview"
-      ],
-      "sortOrder": "custom"
-    },
-    "Task1/实验2-9执行结果/system-hint-preview": {
-      "children": [
-        "Task1/实验2-9执行结果/system-hint-preview/preview_output.txt"
-      ],
-      "sortOrder": "custom"
-    },
-    "Task1/实验3-5执行结果": {
-      "children": [
-        "Task1/实验3-5执行结果/bm25-cli"
-      ],
-      "sortOrder": "custom"
-    },
-    "Task1/实验3-5执行结果/bm25-cli": {
-      "children": [
-        "Task1/实验3-5执行结果/bm25-cli/eval_k1_2_b_03.json",
-        "Task1/实验3-5执行结果/bm25-cli/eval_k1_2_b_03.txt",
-        "Task1/实验3-5执行结果/bm25-cli/query_cat_synonym_fail.json",
-        "Task1/实验3-5执行结果/bm25-cli/query_cat_synonym_fail.txt",
-        "Task1/实验3-5执行结果/bm25-cli/query_distillation_k1_1_b_0.json",
-        "Task1/实验3-5执行结果/bm25-cli/query_distillation_k1_1_b_0.txt",
-        "Task1/实验3-5执行结果/bm25-cli/query_distillation_k1_2_b_05.json",
-        "Task1/实验3-5执行结果/bm25-cli/query_distillation_k1_2_b_05.txt",
-        "Task1/实验3-5执行结果/bm25-cli/query_distillation_default.json",
-        "Task1/实验3-5执行结果/bm25-cli/query_distillation_default.txt",
-        "Task1/实验3-5执行结果/bm25-cli/eval_default.json",
-        "Task1/实验3-5执行结果/bm25-cli/eval_default.txt"
-      ],
-      "sortOrder": "custom"
-    },
-    "Task1/assert": {
-      "children": [
-        "Task1/assert/Task 1 上下文与记忆 - 笔记"
-      ],
-      "sortOrder": "custom"
-    },
-    "Task1/assert/Task 1 上下文与记忆 - 笔记": {
-      "children": [
-        "Task1/assert/Task 1 上下文与记忆 - 笔记/file-20260919182052383.png"
       ],
       "sortOrder": "custom"
     }

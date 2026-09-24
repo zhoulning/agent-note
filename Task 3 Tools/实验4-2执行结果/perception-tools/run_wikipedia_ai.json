@@ -1,0 +1,41 @@
+调用工具 wikipedia_search ...
+ERROR: Wikipedia error: Traceback (most recent call last):
+  File "C:\ai_coding\ai-agent-book\.venv\Lib\site-packages\requests\models.py", line 978, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ai_coding\ai-agent-book\chapter4\perception-tools\src\public_data_tools.py", line 321, in search_wikipedia
+    search_results = wikipedia.search(query, results=3)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai_coding\ai-agent-book\.venv\Lib\site-packages\wikipedia\util.py", line 28, in __call__
+    ret = self._cache[key] = self.fn(*args, **kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai_coding\ai-agent-book\.venv\Lib\site-packages\wikipedia\wikipedia.py", line 103, in search
+    raw_results = _wiki_request(search_params)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ai_coding\ai-agent-book\.venv\Lib\site-packages\wikipedia\wikipedia.py", line 742, in _wiki_request
+    return r.json()
+           ^^^^^^^^
+  File "C:\ai_coding\ai-agent-book\.venv\Lib\site-packages\requests\models.py", line 982, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+{
+  "success": false,
+  "message": "Wikipedia search failed: Expecting value: line 1 column 1 (char 0)",
+  "metadata": {
+    "error_type": "wikipedia_error"
+  }
+}

@@ -1,0 +1,13 @@
+
+工具：weather   分类：公开数据源
+描述：查询天气（Open-Meteo，免费无 Key）
+实现：src/public_data_tools.py :: get_weather()
+需要联网：是
+
+参数：
+  location: <class 'str'>
+  latitude: float | None = None
+  longitude: float | None = None
+
+示例：python cli.py run weather location=...
+
