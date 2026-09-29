@@ -6,6 +6,7 @@
         "Task 1 上下文工程",
         "Task 2 用户记忆和知识库",
         "Task 3 Tools",
+        "Task4 Coding Agent 与通用 Agent",
         "assert",
         "README.md"
       ],
@@ -276,6 +277,37 @@
       "children": [
         "Task0/assert/Task 0 基础与环境 - 作业/file-20260916180509710.png"
       ],
+      "sortOrder": "custom"
+    },
+    "Task4 Coding Agent 与通用 Agent": {
+      "children": [
+        "Task4 Coding Agent 与通用 Agent/Task 4 Coding Agent 与通用 Agent - 笔记.md",
+        "Task4 Coding Agent 与通用 Agent/Task 4 Coding Agent 与通用 Agent - 作业.md",
+        "Task4 Coding Agent 与通用 Agent/assert",
+        "Task4 Coding Agent 与通用 Agent/实验5-5执行结果"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task4 Coding Agent 与通用 Agent/实验5-5执行结果": {
+      "children": [
+        "Task4 Coding Agent 与通用 Agent/实验5-5执行结果/codified-rules"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task4 Coding Agent 与通用 Agent/实验5-5执行结果/codified-rules": {
+      "children": [
+        "Task4 Coding Agent 与通用 Agent/实验5-5执行结果/codified-rules/selftest_output.txt"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task4 Coding Agent 与通用 Agent/assert": {
+      "children": [
+        "Task4 Coding Agent 与通用 Agent/assert/Task 4 Coding Agent 与通用 Agent - 笔记"
+      ],
+      "sortOrder": "custom"
+    },
+    "Task4 Coding Agent 与通用 Agent/assert/Task 4 Coding Agent 与通用 Agent - 笔记": {
+      "children": [],
       "sortOrder": "custom"
     }
   },

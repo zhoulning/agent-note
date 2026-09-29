@@ -1,0 +1,368 @@
+========================================================================
+离线自检（无需 API Key）：代码化退款政策 + 工具内真值校验
+服务端时钟 SERVER_NOW = 2026-07-17T12:00:00
+========================================================================
+
+[TB001-basic_economy-h5p0-scheduled] 舱位=basic_economy 下单=2026-07-17T07:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=within_24h
+  [控制组·天真工具] status=ok 退款=501.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=501.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB002-basic_economy-h5p0-cancelled_by_airline] 舱位=basic_economy 下单=2026-07-17T07:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=within_24h
+  [控制组·天真工具] status=ok 退款=502.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=502.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB003-basic_economy-h5p0-delayed_major] 舱位=basic_economy 下单=2026-07-17T07:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=within_24h
+  [控制组·天真工具] status=ok 退款=503.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=503.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB004-basic_economy-h5p0-delayed_minor] 舱位=basic_economy 下单=2026-07-17T07:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=within_24h
+  [控制组·天真工具] status=ok 退款=504.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=504.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB005-basic_economy-h24p0-scheduled] 舱位=basic_economy 下单=2026-07-16T12:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=within_24h
+  [控制组·天真工具] status=ok 退款=505.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=505.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB006-basic_economy-h24p0-cancelled_by_airline] 舱位=basic_economy 下单=2026-07-16T12:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=within_24h
+  [控制组·天真工具] status=ok 退款=506.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=506.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB007-basic_economy-h24p0-delayed_major] 舱位=basic_economy 下单=2026-07-16T12:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=within_24h
+  [控制组·天真工具] status=ok 退款=507.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=507.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB008-basic_economy-h24p0-delayed_minor] 舱位=basic_economy 下单=2026-07-16T12:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=within_24h
+  [控制组·天真工具] status=ok 退款=508.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=508.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB009-basic_economy-h24p1-scheduled] 舱位=basic_economy 下单=2026-07-16T11:54:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=False, reason=non_refundable_basic_economy
+  [控制组·天真工具] status=ok 退款=509.0  ← 违规！政策不可退却退了
+  [实验组·代码化] 模型自报expected_refundable=True -> status=rejected [拒绝(policy_violation)] 退款=0.0
+      expected_* 校验：自报=True vs 真值=False -> 不一致（已记录告警）
+
+[TB010-basic_economy-h24p1-cancelled_by_airline] 舱位=basic_economy 下单=2026-07-16T11:54:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=airline_caused
+  [控制组·天真工具] status=ok 退款=510.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=510.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB011-basic_economy-h24p1-delayed_major] 舱位=basic_economy 下单=2026-07-16T11:54:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=airline_caused
+  [控制组·天真工具] status=ok 退款=511.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=511.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB012-basic_economy-h24p1-delayed_minor] 舱位=basic_economy 下单=2026-07-16T11:54:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=False, reason=non_refundable_basic_economy
+  [控制组·天真工具] status=ok 退款=512.0  ← 违规！政策不可退却退了
+  [实验组·代码化] 模型自报expected_refundable=True -> status=rejected [拒绝(policy_violation)] 退款=0.0
+      expected_* 校验：自报=True vs 真值=False -> 不一致（已记录告警）
+
+[TB013-basic_economy-h26p0-scheduled] 舱位=basic_economy 下单=2026-07-16T10:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=False, reason=non_refundable_basic_economy
+  [控制组·天真工具] status=ok 退款=513.0  ← 违规！政策不可退却退了
+  [实验组·代码化] 模型自报expected_refundable=True -> status=rejected [拒绝(policy_violation)] 退款=0.0
+      expected_* 校验：自报=True vs 真值=False -> 不一致（已记录告警）
+
+[TB014-basic_economy-h26p0-cancelled_by_airline] 舱位=basic_economy 下单=2026-07-16T10:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=airline_caused
+  [控制组·天真工具] status=ok 退款=514.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=514.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB015-basic_economy-h26p0-delayed_major] 舱位=basic_economy 下单=2026-07-16T10:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=airline_caused
+  [控制组·天真工具] status=ok 退款=515.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=515.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB016-basic_economy-h26p0-delayed_minor] 舱位=basic_economy 下单=2026-07-16T10:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=False, reason=non_refundable_basic_economy
+  [控制组·天真工具] status=ok 退款=516.0  ← 违规！政策不可退却退了
+  [实验组·代码化] 模型自报expected_refundable=True -> status=rejected [拒绝(policy_violation)] 退款=0.0
+      expected_* 校验：自报=True vs 真值=False -> 不一致（已记录告警）
+
+[TB017-basic_economy-h120p0-scheduled] 舱位=basic_economy 下单=2026-07-12T12:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=False, reason=non_refundable_basic_economy
+  [控制组·天真工具] status=ok 退款=517.0  ← 违规！政策不可退却退了
+  [实验组·代码化] 模型自报expected_refundable=True -> status=rejected [拒绝(policy_violation)] 退款=0.0
+      expected_* 校验：自报=True vs 真值=False -> 不一致（已记录告警）
+
+[TB018-basic_economy-h120p0-cancelled_by_airline] 舱位=basic_economy 下单=2026-07-12T12:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=airline_caused
+  [控制组·天真工具] status=ok 退款=518.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=518.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB019-basic_economy-h120p0-delayed_major] 舱位=basic_economy 下单=2026-07-12T12:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=airline_caused
+  [控制组·天真工具] status=ok 退款=519.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=519.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB020-basic_economy-h120p0-delayed_minor] 舱位=basic_economy 下单=2026-07-12T12:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=False, reason=non_refundable_basic_economy
+  [控制组·天真工具] status=ok 退款=520.0  ← 违规！政策不可退却退了
+  [实验组·代码化] 模型自报expected_refundable=True -> status=rejected [拒绝(policy_violation)] 退款=0.0
+      expected_* 校验：自报=True vs 真值=False -> 不一致（已记录告警）
+
+[TB021-economy_flex-h5p0-scheduled] 舱位=economy_flex 下单=2026-07-17T07:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=521.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=521.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB022-economy_flex-h5p0-cancelled_by_airline] 舱位=economy_flex 下单=2026-07-17T07:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=522.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=522.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB023-economy_flex-h5p0-delayed_major] 舱位=economy_flex 下单=2026-07-17T07:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=523.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=523.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB024-economy_flex-h5p0-delayed_minor] 舱位=economy_flex 下单=2026-07-17T07:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=524.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=524.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB025-economy_flex-h24p0-scheduled] 舱位=economy_flex 下单=2026-07-16T12:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=525.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=525.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB026-economy_flex-h24p0-cancelled_by_airline] 舱位=economy_flex 下单=2026-07-16T12:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=526.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=526.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB027-economy_flex-h24p0-delayed_major] 舱位=economy_flex 下单=2026-07-16T12:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=527.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=527.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB028-economy_flex-h24p0-delayed_minor] 舱位=economy_flex 下单=2026-07-16T12:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=528.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=528.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB029-economy_flex-h24p1-scheduled] 舱位=economy_flex 下单=2026-07-16T11:54:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=529.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=529.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB030-economy_flex-h24p1-cancelled_by_airline] 舱位=economy_flex 下单=2026-07-16T11:54:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=530.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=530.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB031-economy_flex-h24p1-delayed_major] 舱位=economy_flex 下单=2026-07-16T11:54:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=531.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=531.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB032-economy_flex-h24p1-delayed_minor] 舱位=economy_flex 下单=2026-07-16T11:54:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=532.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=532.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB033-economy_flex-h26p0-scheduled] 舱位=economy_flex 下单=2026-07-16T10:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=533.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=533.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB034-economy_flex-h26p0-cancelled_by_airline] 舱位=economy_flex 下单=2026-07-16T10:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=534.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=534.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB035-economy_flex-h26p0-delayed_major] 舱位=economy_flex 下单=2026-07-16T10:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=535.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=535.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB036-economy_flex-h26p0-delayed_minor] 舱位=economy_flex 下单=2026-07-16T10:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=536.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=536.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB037-economy_flex-h120p0-scheduled] 舱位=economy_flex 下单=2026-07-12T12:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=537.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=537.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB038-economy_flex-h120p0-cancelled_by_airline] 舱位=economy_flex 下单=2026-07-12T12:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=538.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=538.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB039-economy_flex-h120p0-delayed_major] 舱位=economy_flex 下单=2026-07-12T12:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=539.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=539.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB040-economy_flex-h120p0-delayed_minor] 舱位=economy_flex 下单=2026-07-12T12:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=540.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=540.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB041-business-h5p0-scheduled] 舱位=business 下单=2026-07-17T07:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=541.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=541.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB042-business-h5p0-cancelled_by_airline] 舱位=business 下单=2026-07-17T07:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=542.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=542.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB043-business-h5p0-delayed_major] 舱位=business 下单=2026-07-17T07:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=543.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=543.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB044-business-h5p0-delayed_minor] 舱位=business 下单=2026-07-17T07:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=544.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=544.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB045-business-h24p0-scheduled] 舱位=business 下单=2026-07-16T12:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=545.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=545.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB046-business-h24p0-cancelled_by_airline] 舱位=business 下单=2026-07-16T12:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=546.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=546.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB047-business-h24p0-delayed_major] 舱位=business 下单=2026-07-16T12:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=547.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=547.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB048-business-h24p0-delayed_minor] 舱位=business 下单=2026-07-16T12:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=548.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=548.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB049-business-h24p1-scheduled] 舱位=business 下单=2026-07-16T11:54:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=549.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=549.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB050-business-h24p1-cancelled_by_airline] 舱位=business 下单=2026-07-16T11:54:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=550.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=550.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB051-business-h24p1-delayed_major] 舱位=business 下单=2026-07-16T11:54:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=551.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=551.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB052-business-h24p1-delayed_minor] 舱位=business 下单=2026-07-16T11:54:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=552.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=552.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB053-business-h26p0-scheduled] 舱位=business 下单=2026-07-16T10:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=553.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=553.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB054-business-h26p0-cancelled_by_airline] 舱位=business 下单=2026-07-16T10:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=554.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=554.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB055-business-h26p0-delayed_major] 舱位=business 下单=2026-07-16T10:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=555.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=555.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB056-business-h26p0-delayed_minor] 舱位=business 下单=2026-07-16T10:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=556.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=556.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB057-business-h120p0-scheduled] 舱位=business 下单=2026-07-12T12:00:00 航班状态=scheduled
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=557.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=557.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB058-business-h120p0-cancelled_by_airline] 舱位=business 下单=2026-07-12T12:00:00 航班状态=cancelled_by_airline
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=558.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=558.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB059-business-h120p0-delayed_major] 舱位=business 下单=2026-07-12T12:00:00 航班状态=delayed_major
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=559.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=559.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+[TB060-business-h120p0-delayed_minor] 舱位=business 下单=2026-07-12T12:00:00 航班状态=delayed_minor
+  政策真值 is_refundable -> refundable=True, reason=flexible_fare
+  [控制组·天真工具] status=ok 退款=560.0  
+  [实验组·代码化] 模型自报expected_refundable=False -> status=ok [退款执行] 退款=560.0
+      expected_* 校验：自报=False vs 真值=True -> 不一致（已记录告警）
+
+========================================================================
+结论：无论模型自报什么，实验组一律以数据库真值裁决——不可退的一律被拦截，可退的才放行。
+========================================================================
