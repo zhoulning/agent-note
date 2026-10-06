@@ -149,6 +149,19 @@
     },
     "Task 3 Tools/assert/Task 3 Tools - 笔记": {
       "children": [
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005200947819.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005200819842.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005200328371.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005200314100.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005194720740.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005185026551.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005185000374.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005184941221.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005181516183.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005180101971.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261005180051183.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261004133922118.png",
+        "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20261004164442322.png",
         "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20260922220231178.png",
         "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20260922203658609.png",
         "Task 3 Tools/assert/Task 3 Tools - 笔记/file-20260922203019029.png"
@@ -281,9 +294,9 @@
     },
     "Task4 Coding Agent 与通用 Agent": {
       "children": [
+        "Task4 Coding Agent 与通用 Agent/assert",
         "Task4 Coding Agent 与通用 Agent/Task 4 Coding Agent 与通用 Agent - 笔记.md",
         "Task4 Coding Agent 与通用 Agent/Task 4 Coding Agent 与通用 Agent - 作业.md",
-        "Task4 Coding Agent 与通用 Agent/assert",
         "Task4 Coding Agent 与通用 Agent/实验5-5执行结果"
       ],
       "sortOrder": "custom"
@@ -302,12 +315,25 @@
     },
     "Task4 Coding Agent 与通用 Agent/assert": {
       "children": [
-        "Task4 Coding Agent 与通用 Agent/assert/Task 4 Coding Agent 与通用 Agent - 笔记"
+        "Task4 Coding Agent 与通用 Agent/assert/笔记"
       ],
       "sortOrder": "custom"
     },
-    "Task4 Coding Agent 与通用 Agent/assert/Task 4 Coding Agent 与通用 Agent - 笔记": {
-      "children": [],
+    "Task4 Coding Agent 与通用 Agent/assert/笔记": {
+      "children": [
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261006101946287.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261006101439632.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261006101358613.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261006101320386.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261006101024288.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261006100746244.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261006100158130.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261005221102605.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261005215958065.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261005214918191.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261005213445547.png",
+        "Task4 Coding Agent 与通用 Agent/assert/笔记/file-20261005212912994.png"
+      ],
       "sortOrder": "custom"
     }
   },
